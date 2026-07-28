@@ -54,3 +54,13 @@ def test_standardise_dates():
     df = pd.DataFrame({'date': ['2024-01-01', '2024-06-15']})
     result = standardise_dates(df, date_columns=['date'])
     assert pd.api.types.is_datetime64_any_dtype(result['date'])
+
+
+def select_columns(columns=None):
+    target_cols = None
+    
+    # Your target code block
+    if columns: 
+        target_cols = columns
+        
+    return target_cols
