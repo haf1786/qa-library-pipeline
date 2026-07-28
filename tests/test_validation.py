@@ -6,6 +6,10 @@ src/data_processing/validation.py.
 
 from data_processing.validation import validate_isbn
 
+def test_isbn_is_None():
+    result = validate_isbn(None)
+    assert  result == None
+
 def test_valid_isbn():
     result = validate_isbn('9780306406157')
     assert result == '9780306406157'
@@ -16,4 +20,8 @@ def test_invalid_isbn():
 
 def test_wrong_length():
     result = validate_isbn('123456789')
+    assert result is None
+
+def test_invalid_isbn_check_digit():
+    result = validate_isbn('1234567890123')
     assert result is None
