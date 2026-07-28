@@ -2,6 +2,7 @@
 Data validation functions.
 """
 
+
 def validate_isbn(isbn):
     if isbn is None:
         return None

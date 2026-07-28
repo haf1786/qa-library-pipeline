@@ -49,7 +49,7 @@ def load_csv(filepath, **kwargs):
     except Exception as e:
         logger.error(f"Error loading CSV {filepath}: {e}")
         raise
-        
+
 
 def load_json(filepath):
     """Load JSON file and flatten nested structure into a DataFrame.
@@ -75,7 +75,7 @@ def load_json(filepath):
 
     try:
         logger.info(f"Loading JSON from {filepath}")
-        with open(filepath, 'r') as f:
+        with open(filepath, "r") as f:
             data = json.load(f)
 
         df = pd.json_normalize(data)
@@ -118,11 +118,11 @@ def load_excel(filepath, sheet_name=0, **kwargs):
         logger.error(f"Excel File not found: {filepath}")
         raise FileNotFoundError(f"Excel File not found: {filepath}")
 
-    df = pd.read_excel("data/catalogue.xlsx", sheet_name='Catalogue')
+    df = pd.read_excel("data/catalogue.xlsx", sheet_name="Catalogue")
     print(len(df))
-    
+
     filepath = Path(filepath)
-    
+
     try:
         logger.info(f"Loading Excel from {filepath} (sheet_name={sheet_name})")
         df = pd.read_excel(filepath, sheet_name=sheet_name, **kwargs)
