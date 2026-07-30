@@ -10,6 +10,8 @@ nav:
 
 # Theme
 theme:
+    palette:
+      primary: orange
     features:
       - toc.integrate
       - content.code.copy
